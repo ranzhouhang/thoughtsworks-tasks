@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>title</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/bootstrap-theme.min.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -17,7 +17,7 @@
         border: 2px solid lightgray;
         border-radius: 0 0 5px 5px ;
         width: 1300px ;
-        margin-left: 270px;
+        margin:auto;
         border-top-style:none;
         height:300px;
         margin-bottom: 30px;}
@@ -82,7 +82,7 @@
     <div style="border: 2px solid lightgray;
                 border-radius: 0 0 5px 5px ;
                 width: 1300px ;
-                margin-left: 270px;
+                margin:auto;
                 border-top-style:none;
                 height:180px;
                 margin-bottom: 30px">
@@ -155,7 +155,7 @@
     <div style="border: 2px solid lightgray;
                 border-radius: 0 0 5px 5px ;
                 width: 1300px ;
-                margin-left: 270px;
+                margin:auto;
                 border-top-style:none;
                 height:300px;
                 margin-bottom: 30px;">
@@ -212,7 +212,7 @@
     <div style="border: 2px solid lightgray;
                 border-radius: 0 0 5px 5px ;
                 width: 1300px ;
-                margin-left: 270px;
+                margin:auto;
                 border-top-style:none;
                 height:100px;
                 margin-bottom: 30px;">
@@ -253,16 +253,10 @@
     <div style="border: 2px solid lightgray;
                 border-radius: 0 0 5px 5px ;
                 width: 1300px ;
-                margin-left: 270px;
+                margin:auto;
                 border-top-style:none;
                 height:300px;
                 margin-bottom: 30px;">
-        <!--
-        <ol style="position:relative;
-                left:43px;
-                top: 25px;">
-            <li>简述什么是模型以及模型的表现形式？</li><textarea class="form-control" rows="10" cols="150"></textarea>
-        </ol>-->
         <form role="form" style="position:relative;
                 left:43px;
                 top: 25px;">
@@ -273,8 +267,23 @@
         </form>
     </div>
     <div align="center">
-    <button type="button"  class="btn btn-primary">计算分数</button>
+    <button type="button"  class="btn btn-primary" onclick="CheckForm()">计算分数</button>
     </div>
+
+        <script>
+            var x=document.getElementById ("class");
+                y=document.getElementById("number");
+                z=document.getElementById("name");
+            function   CheckForm()
+            {
+                if   (x.value == ""||y.value == ""||z.value == "")
+                {
+                    alert("请检查并填写必填信息");
+                    return   false;
+                }else
+                return   true;}
+        </script>
+
     <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 </body>
