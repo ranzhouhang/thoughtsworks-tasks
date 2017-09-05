@@ -43,7 +43,7 @@
         <span style="position:relative;
                 left:300px"><strong>时间：</strong>100分钟</span>
         <span style="position:relative;
-                left:600px"><strong>得分：</strong></span>
+                left:600px"><strong>得分：</strong><span id="getfen"></span></span>
     </div>
 
 <div style="padding: 0.6cm;
@@ -92,13 +92,13 @@
                 top: 25px;">
             <li><b>UML的中文全称是：</b></li>
                 <form class="form-inline">
-                    <input type="text" class="form-control"/>
+                    <input type="text" class="form-control" id="统一建模语言"/>
                 </form>
             <li><b>对象最突出的特征是：</b>
                 <form class="form-inline">
-                    <input type="text" class="form-control" />
-                    <input type="text" class="form-control" />
-                    <input type="text" class="form-control" />
+                    <input type="text" class="form-control" id="111"/>
+                    <input type="text" class="form-control" id="222"/>
+                    <input type="text" class="form-control" id="333"/>
                 </form>
             </li>
         </ol>
@@ -117,16 +117,16 @@
 <ol class="a">
     <li>UML与软件工程的关系是：</li>
     <label class="radio-inline">
-        <input type="radio" name="b" id="1" value="option1"> (A)UML就是软件工程
+        <input type="radio" name="b" id="1" value="1"> (A)UML就是软件工程
     </label></br>
     <label class="radio-inline">
-        <input type="radio" name="b" id="2" value="option2">（B）UML参与到软件工程中软件开发过程的几个阶段
+        <input type="radio" name="b" id="2" value="2" >（B）UML参与到软件工程中软件开发过程的几个阶段
     </label></br>
     <label class="radio-inline">
-        <input type="radio" name="b" id="3" value="option3">（C）UML与软件工程无关
+        <input type="radio" name="b" id="3" value="3">（C）UML与软件工程无关
     </label></br>
     <label class="radio-inline">
-        <input type="radio" name="b" id="4" value="option3">（D）UML是软件工程的一部分
+        <input type="radio" name="b" id="4" value="4">（D）UML是软件工程的一部分
     </label></br>
     <li>Java语言支持</li>
     <label class="radio-inline">
@@ -165,37 +165,37 @@
     <li>用例的粒度分为以下哪三种：
     </li>
     <label>
-        <input type="checkbox" value="">
+        <input type="checkbox" id="1111">
         (A)概述级
     </label></br>
     <label>
-        <input type="checkbox" value="">
+        <input type="checkbox" id="2222">
         (B）需求级
     </label></br>
     <label>
-        <input type="checkbox" value="">
+        <input type="checkbox" id="3333">
         (C）用户目标级
     </label></br>
     <label>
-        <input type="checkbox" value="">
+        <input type="checkbox" id="4444">
         (D）子功能级
     </label></br>
     <li>类图由以下哪三部分构成：
     </li>
     <label>
-        <input type="checkbox" value="">
+        <input type="checkbox" id="11111">
         (A)名称（Name）
     </label></br>
     <label>
-        <input type="checkbox" value="">
+        <input type="checkbox" id="22222">
         (B）属性(Attribute)
     </label></br>
     <label>
-        <input type="checkbox" value="">
+        <input type="checkbox" id="33333">
         (C）操作(Operation)
     </label></br>
     <label>
-        <input type="checkbox" value="">
+        <input type="checkbox" id="44444">
         (D）方法(Function)
     </label></br>
     </ol>
@@ -225,13 +225,13 @@
         </label>
         <span class="glyphicon glyphicon-ok" aria-hidden="true" style="color:green"></span>
         <label class="radio-inline">
-            <input type="radio" name="inlineRadioOption" id="inlineRadio" value="option1" style="position:relative;top:-2px;">
+            <input type="radio" name="inlineRadioOption" id="8" value="option1" style="position:relative;top:-2px;">
         </label>
         <span class="glyphicon glyphicon-remove" aria-hidden="true" style="color:red"></span>
     </li>
     <li>在状态图中，终止状态在一个状态图中允许有任意多个.
         <label class="radio-inline">
-            <input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" style="position:relative;top:-2px;">
+            <input type="radio" name="inlineRadioOptions" id="9" value="option2" style="position:relative;top:-2px;">
         </label>
         <span class=" glyphicon glyphicon-ok " aria-hidden="true" style="color:green"></span>
         <label class="radio-inline">
@@ -262,7 +262,7 @@
                 top: 25px;">
             <div style="width:1200px">
                 <label for="name">1.简述什么是模型以及模型的表现形式？</label>
-                <textarea class="form-control" rows="10"></textarea>
+                <textarea class="form-control" rows="10" id="10"></textarea>
             </div>
         </form>
     </div>
@@ -274,14 +274,87 @@
             var x=document.getElementById ("class");
                 y=document.getElementById("number");
                 z=document.getElementById("name");
+                w=document.getElementById("getfen");
             function   CheckForm()
             {
-                if   (x.value == ""||y.value == ""||z.value == "")
+                var grade=Number(0);
+                if (x.value == "" || y.value == "" || z.value == "")
                 {
-                    alert("请检查并填写必填信息");
-                    return   false;
-                }else
-                return   true;}
+                    alert("请检查并填写必填信息")}
+                else
+                    var e=document.getElementById("统一建模语言").value;
+                    var q="统一建模语言";
+                    if (e==q)
+                {
+                    grade=grade+5
+                }
+                    else
+                    {
+                        grade=grade
+                    }
+                    var r=document.getElementById("111").value;
+                    if(r=="封装性"||r=="继承性"||r=="多态性")
+                    {
+                        grade=grade+5;
+                    }
+                    else{
+                        grade=grade;
+                    }
+                    var t=document.getElementById("222").value;
+                    if(t=="继承性"||t=="封装性"||t=="多态性"&&t!=r)
+                    {
+                        grade=grade+5
+                    }
+                    else
+                    {
+                        grade=grade
+                    }
+                    var second=document.getElementById("333").value;
+                    if(second=="封装性"||second=="继承性"||second=="多态性"&&y!=r&&y!=t)
+                        grade=grade+5;
+                else
+                    grade=grade
+                if(document.getElementById("2").checked==true)
+                    grade=grade+10;
+                else
+                    grade=grade
+                if(document.getElementById("11").checked==true)
+                    grade=grade+10;
+                else
+                    grade=grade
+                if(document.getElementById("1111").checked==true&&document.getElementById("3333").checked==true&&document.getElementById("4444").checked==true&&document.getElementById("2222").checked==false)
+                    grade=grade+10;
+                else
+                    grade=grade
+                if(document.getElementById("11111").checked==true&&document.getElementById("22222").checked==true&&document.getElementById("33333").checked==true&&document.getElementById("44444").checked==false)
+                    grade=grade+10;
+                else
+                    grade=grade
+                if(document.getElementById("8").checked==true)
+                    grade=grade+10;
+                else
+                    grade=grade
+                if(document.getElementById("9").checked==true)
+                    grade=grade+10;
+                else
+                    grade=grade
+                if (document.getElementById("10").value=="模型是对现实世界的简化和抽象")
+                    grade=grade+20;
+                else
+                    grade=grade;
+
+                    /*var arr=['模型','简化','抽象','表达','图形'];
+                    shuzhi=doocument.getElementById("10").value;
+                alert("shuzhi");
+                for (i=0; i<arr.length; i++)
+                    xx = arr[i];
+                for (j=0;j<shuzhi.length;j++)
+                    var pppp=shuzhi.substr(j,2)
+                    if (pppp==xx)*/
+
+
+                w.innerHTML=grade
+            }
         </script>
 
     <script src="js/jquery-3.2.1.min.js"></script>
